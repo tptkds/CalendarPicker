@@ -1,0 +1,33 @@
+.calendar {
+    width: 500px;
+}
+.calendar__nav {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #3BBA6D;
+    color: white
+}
+
+.calendar__grid {
+    display: grid;
+    background-color: #FFFDFF;  
+}
+
+.calendar__rightButton, .calendar__leftButton{
+    height: 24px;
+    cursor: pointer;
+}
+.calendar__rightButton svg, .calendar__leftButton svg{
+    width: 24px;
+    height: 24px;
+    fill: rgba(255, 255, 255, 1);
+}
+
+.calendar__date {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}

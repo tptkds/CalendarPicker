@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <link rel="stylesheet" href="./stylesheets/main.css">
 </head>
 <body>
     <div class="calendar">
         <main class="calendar__main">
             <nav class="calendar__nav">
-                <button class="calendar__rightButton"></button>
+                <button class="calendar__leftButton">
+                    <svg xmlns="http://www.w3.org/2000/svg"><path d="M15 19V5l-8 7z"></path></svg>
+                </button>
                 <div class="calendar__date">
-                    <p class="calendar__month"></p>
-                    <p class="calendar__year"></p>
+                    <p class="calendar__month">sdsaf</p>
+                    <p class="calendar__year">2022</p>
                 </div>
-                <button class="calendar__leftButton"></button>
+                <button class="calendar__rightButton">
+                    <svg xmlns="http://www.w3.org/2000/svg"><path d="m9 19 8-7-8-7z"></path></svg>
+                </button>
             </nav>
             <section class="calendar__grid">
                 <div class="calendar__week"></div>
@@ -22,5 +27,6 @@
             </section>
         </main>
     </div>
+    <script src='./app.js' type='module'></script>
 </body>
 </html>
