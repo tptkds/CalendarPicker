@@ -8,8 +8,18 @@
 <body>
     <div class="calendar">
         <main class="calendar__main">
-            <nav class="calendar__nav calendar-nav"></nav>
-            <section class="calendar__grid calendar-grid"></section>
+            <nav class="calendar__nav">
+                <button class="calendar__rightButton"></button>
+                <div class="calendar__date">
+                    <p class="calendar__month"></p>
+                    <p class="calendar__year"></p>
+                </div>
+                <button class="calendar__leftButton"></button>
+            </nav>
+            <section class="calendar__grid">
+                <div class="calendar__week"></div>
+                <div class="calendar__days"></div>
+            </section>
         </main>
     </div>
 </body>
