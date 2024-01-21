@@ -1,15 +1,29 @@
-import { displayDate } from './modules/displayDate.js';
-import { displayDays } from './modules/displayDays.js';
-const calendarMonth = document.querySelector('.calendar__month');
-const calendarYear = document.querySelector('.calendar__year');
-const calendarDays = document.querySelector('.calendar__days');
-export const calendar = () => {
-    const date = new Date();
-    displayDate(calendarMonth, calendarYear, date.getMonth() + 1, date.getFullYear());
+import { updateCalendar } from './modules/updateCalendar.js';
 
-    const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-    const firstWeek = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-    const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate()
-    const lastWeek = new Date(date.getFullYear(), date.getMonth() + 1, 1).getDay();
-    displayDays(lastDay, firstWeek, lastWeek, prevLastDay, calendarDays);
+const calendarDiv = document.querySelector('.calendar');
+const calendarLeftButton = document.querySelector('.calendar__leftButton');
+const calendarRightButton = document.querySelector('.calendar__rightButton');
+export const calendar = () => {
+    let nowDate = new Date();
+    const monthStartDate = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1);
+    updateCalendar(monthStartDate);
+    
+
+    calendarLeftButton.addEventListener('click', () => {
+        nowDate = new Date(nowDate.getFullYear(), nowDate.getMonth() - 1, 1);
+        updateCalendar(nowDate);
+    })
+    calendarRightButton.addEventListener('click', () => {
+        nowDate = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 1);
+        updateCalendar(nowDate);
+    })
+    
+    const observer = new ResizeObserver(mutations => {
+        calendarDiv.style.setProperty('--calendar-width', mutations[0].contentRect.width + "px");
+        calendarDiv.style.setProperty('--calendar-height', mutations[0].contentRect.height + "px");
+    });
+    observer.observe(calendarDiv);
+ 
+    
 }
+
