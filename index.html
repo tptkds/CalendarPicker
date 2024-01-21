@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
+    <title>날짜 선택기</title>
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet">
 </head>
 <body>
+    <h1>날짜 선택기</h1>
+    <form class="datePicker">
+        <input class="datePicker__text" type="text" placeholder="날짜를 선택하세요." readonly/>
+    </form>
     <div class="calendar">
         <main class="calendar__main">
             <nav class="calendar__nav">

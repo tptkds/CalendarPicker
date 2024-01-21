@@ -1,4 +1,7 @@
-.calendar {
-    --calendar-width: 280px; 
-    --calendar-height: 325px;
+* {
+    --font-family: 'Noto Sans KR',sans-serif;
+    --calendar-size: 350px;
+    --body-font-size: 12px;
+    --large-font-size: 2em;
+    --medium-font-size: 1.2em;
 }

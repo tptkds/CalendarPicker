@@ -1,20 +1,45 @@
-.calendar {
-    width: var(--calendar-width);
-    height: var(--calendar-height);
-    resize: both;
-    overflow:hidden;
-}
-.calendar__main {
+html, body{
     height: 100%;
 }
+body {
+    padding: 10px;
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+}
+
+.datePicker__text{
+    margin-top: 10px;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    caret-color: transparent;
+}
+.calendar {
+    max-width: 350px;
+    min-width: 278px;
+    display: none;
+    margin-top: 5px;
+    box-shadow: 0 0 5px #3333333d;
+    border-radius: 10px;
+}
+
+.calendar--active {
+    display: block;
+}
+
+.calendar__main {
+    height: 100%;
+    flex-basis: 100%;
+}
+
 .calendar__nav {
     display: flex;
     align-items: center;
-    padding: 0 12px;
+    padding: 10px 12px;
     border-radius: 10px 10px 0px 0px;
     background-color: #3BBA6D;
     color: white;
-    height: 20%;
 }
 
 .calendar__grid {
@@ -22,24 +47,13 @@
     border-radius: 0px 0px 10px 10px;
     padding: 12px;
     height: 80%;
-
-}
-
-.calendar__week {
-    height: 14.2%;
-}
-
-.calendar__days {
-    height: 85.8%;
-}
-.calendar__weekList, .calendar__dayList {
-    height: 100%;
 }
 
 .calendar__rightButton, .calendar__leftButton{
     height: 24px;
     cursor: pointer;
 }
+
 .calendar__rightButton svg, .calendar__leftButton svg{
     width: 24px;
     height: 24px;
@@ -64,8 +78,6 @@ li {
 }
 
 .calendar__dayItem, .calendar__weekItem {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,14 +85,15 @@ li {
 
 .calendar__dayItem {
     cursor: pointer;
+    width: 33px;
+    height: 33px;
 }
 
+
 .calendar__dayItem--today {
-    background-image: url('../assets/icon/today.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: white !important;
-    
+    border: 2px solid orange;
+    border-radius: 50%;
+    box-sizing:border-box;
 }
 
 .calendar__dayList li:nth-child(7n+1){
@@ -88,5 +101,26 @@ li {
 }
 
 .calendar__weekItem, .calendar__dayItem--prev, .calendar__dayItem--next {
-    color: #D5D5D5 !important;
+    color: #a3a3a3 !important;
 } 
+
+.calendar__month {
+    font-size: var(--large-font-size);
+}
+.calendar__year, .calendar__weekItem, .calendar__dayItem {
+    font-size: var(--medium-font-size);
+}
+
+.calendar__dayItem--picked{
+    background-color: #3BBA6D;
+    border-radius: 50%;
+    box-sizing:border-box;
+    color: white !important;
+}
+
+.calendar__dayItem:hover {
+    border-radius: 50%;
+    background-color: #3bba6e48;
+    box-sizing:border-box;
+
+}
