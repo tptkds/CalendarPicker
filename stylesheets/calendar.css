@@ -16,12 +16,12 @@ body {
     caret-color: transparent;
 }
 .calendar {
-    max-width: 350px;
-    min-width: 278px;
+    width: var(--calendar-size);
     display: none;
     margin-top: 5px;
     box-shadow: 0 0 5px #3333333d;
     border-radius: 10px;
+    min-width: 250px;
 }
 
 .calendar--active {
@@ -29,7 +29,6 @@ body {
 }
 
 .calendar__main {
-    height: 100%;
     flex-basis: 100%;
 }
 
@@ -46,7 +45,6 @@ body {
     background-color:#F2F4F6;
     border-radius: 0px 0px 10px 10px;
     padding: 12px;
-    height: 80%;
 }
 
 .calendar__rightButton, .calendar__leftButton{
@@ -81,12 +79,11 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .calendar__dayItem {
     cursor: pointer;
-    width: 33px;
-    height: 33px;
 }
 
 

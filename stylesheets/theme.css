@@ -2,6 +2,6 @@
     --font-family: 'Noto Sans KR',sans-serif;
     --calendar-size: 350px;
     --body-font-size: 12px;
-    --large-font-size: 2em;
-    --medium-font-size: 1.2em;
+    --large-font-size: calc(var(--calendar-size) * 0.0641);
+    --medium-font-size: calc(var(--calendar-size) * 0.0395);
 }
